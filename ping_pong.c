@@ -24,6 +24,7 @@ int main () {
 void inicio (char campo [V][H], int pelX, int pelY, int inijug, int finjug, int iniia, int finia) {
     borde (campo);
     raqjug (campo, inijug, finjug);
+    raqia (campo, iniia, finia);
 }
 
 void borde (char campo [V][H]) {
@@ -48,6 +49,16 @@ void raqjug (char campo[V][H], int inijug, int finjug) {
 
     for (i = inijug; i < finjug; i++) {
         for (j = 2; j <= 3; j++) {
+            campo[i][j] = '#';
+        }
+    }
+}
+
+void raqia (char campo[V][H], int iniia, int finia) {
+    int i, j;
+
+    for (i = iniia; i < finia; i++) {
+        for (j = H-4; j <= H-3; j++) {
             campo[i][j] = '#';
         }
     }
