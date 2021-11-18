@@ -23,8 +23,32 @@ int main () {
 
 void inicio (char campo [V][H], int pelX, int pelY, int inijug, int finjug, int iniia, int finia) {
     borde (campo);
+    raqjug (campo, inijug, finjug);
 }
 
 void borde (char campo [V][H]) {
-    
+    int i, j;
+
+    for (i = 0; i < V; i++) {
+        for (j = 0; j < H; j++) {
+            if (i == 0 || i == V-1) {
+                campo[i][j] = '*';
+            }
+            else if (j == 0 || j == H-1) {
+                campo[i][j] = '*';
+            } else {
+                campo[i][j] = ' ';
+            }
+        }
+    }
+}
+
+void raqjug (char campo[V][H], int inijug, int finjug) {
+    int i,j;
+
+    for (i = inijug; i < finjug; i++) {
+        for (j = 2; j <= 3; j++) {
+            campo[i][j] = '#';
+        }
+    }
 }
